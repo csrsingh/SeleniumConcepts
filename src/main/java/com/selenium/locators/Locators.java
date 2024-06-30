@@ -1,23 +1,23 @@
 package com.selenium.locators;
 
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.Test;
 
 public class Locators {
 	
-		@Test(priority = 1)
-		public void testyogi(){
-		WebDriver driver = new FirefoxDriver();
-		driver.get("https://www.astroyogi.com/");		
-		driver.findElement(By.xpath("/html/body/div[1]/header/div[2]/div[1]/a/img")).click();
-		driver.findElement(By.xpath("/html/body/div[1]/header/div[2]/div[1]/a/img")).click();
-		driver.findElement(By.xpath("//*[@id=\"BtnLinkLoginHome\"]")).click();
-		driver.findElement(By.xpath("//*[@id=\"LoginPhoneNumber\"]")).sendKeys("8080808080");
-		driver.findElement(By.xpath("//*[@id=\"form-submit\"]")).click();
+		public static void main (String args[]) {
+			
+		WebDriver driver = new ChromeDriver();
+		
+		driver.get("https://www.oyorooms.com/");	
+		driver.manage().window().maximize();
+		//Absolute Xpath
+		driver.findElement(By.xpath("/html/body/div[1]/div/div[3]/div[1]/div[2]/div/div[1]/a/div/h2")).click();
+		driver.navigate().back();
+		//Relative Xpath
+		driver.findElement(By.xpath("//h2[text()='Chennai']")).click();
+	
 
 	}
 
